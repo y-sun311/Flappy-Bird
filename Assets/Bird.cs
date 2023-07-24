@@ -66,6 +66,18 @@ public class Bird : MonoBehaviour
     spriteRenderer.sprite = sprites[spriteIndex];
 }
 
+private void OnTriggerEnter2D(Collider2D other)
+{
+    // Check if the bird collided with a pipe.
+    if (other.gameObject.CompareTag("Obstacle"))
+    {
+        FindObjectOfType<GameManager>().GameOver();
+    }
+    else if (other.gameObject.CompareTag("Scoring"))
+    {
+        FindObjectOfType<GameManager>().IncreaseScore();
+    }
+}
 
 }
 
