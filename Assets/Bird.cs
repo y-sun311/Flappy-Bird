@@ -49,20 +49,21 @@ public class Bird : MonoBehaviour
         transform.position += direction * Time.deltaTime;
     }
 
-    private void AnimateSprite()
+   private void AnimateSprite()
+{
+    // Increment the spriteIndex to change to the next sprite.
+    spriteIndex++;
+
+    // Check if the spriteIndex exceeds the number of sprites available.
+    // If yes, reset the index to start from the first sprite.
+    if (spriteIndex >= sprites.Length)
     {
-        // Increment the spriteIndex to change to the next sprite.
-        spriteIndex++;
-
-        // Check if the spriteIndex exceeds the number of sprites available.
-        // If yes, reset the index to start from the first sprite.
-        if (spriteIndex >= sprites.Length)
-        {
-            spriteIndex = 0;
-        }
-
-        // Update the SpriteRenderer's sprite to the current sprite based on spriteIndex.
-        spriteRenderer.sprite = sprites[spriteIndex];
+        spriteIndex = 0;
     }
+
+    // Update the SpriteRenderer's sprite to the current sprite based on spriteIndex.
+    spriteRenderer.sprite = sprites[spriteIndex];
+}
+
 }
 
