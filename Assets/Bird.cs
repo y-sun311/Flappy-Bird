@@ -51,6 +51,7 @@ public class Bird : MonoBehaviour
 
    private void AnimateSprite()
 {
+    
     // Increment the spriteIndex to change to the next sprite.
     spriteIndex++;
 
@@ -64,6 +65,7 @@ public class Bird : MonoBehaviour
     // Update the SpriteRenderer's sprite to the current sprite based on spriteIndex.
     spriteRenderer.sprite = sprites[spriteIndex];
 }
+
 
 }
 
